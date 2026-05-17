@@ -8,8 +8,7 @@ test('Verify User Registration with valid data',async ({page})=>{
 
      const registration = new registrationPage(page)
      await registration.launchURL()
-    // let email = `spree+${random}@example.com`
-     await registration.signinWithDetials('rajendra','d',testData.email,testData.password,testData.password)
+     await registration.signinWithDetials('rajendra','d','spree1224@example.com','123456','123456')
      await registration.loginSuccess()
 
 
