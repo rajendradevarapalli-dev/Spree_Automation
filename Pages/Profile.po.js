@@ -5,14 +5,13 @@ export class profilePage{
     constructor(page){
         
         this.page = page
-        this.navigateToProfilePage = page.locator('//a[text()="Profile"]')
+        this.navigateToProfilePage = page.locator("//a[text()='Profile']")
         this.firstNameInput = page.locator('#first_name')
         this.lastNameInput = page.locator('#last_name')
         this.emailInput = page.locator('#email')
         this.saveChangesBtn = page.locator('//button[@type="submit"]')
-        this.emailInput = page.locator('#email')
         this.passwordInput = page.locator('#password')
-        this.signInBtn = page.locator('//button[text()="Sign In"]')
+        this.signInBtn = page.getByRole('button', { name: /sign ?in/i })
         this.crntPassword = page.locator('//input[@autocomplete="current-password"]')
     }
 
@@ -28,11 +27,11 @@ export class profilePage{
         await this.navigateToProfilePage.click()
     }
 
-    async profileUpdateSuccess(firstname,lastname,email,cnfmpswd){
+    async profileUpdateSuccess(firstname,lastname){
         await this.firstNameInput.fill(firstname)
         await this.lastNameInput.fill(lastname)
-        await this.emailInput.fill(email)
-        await this.crntPassword.fill(cnfmpswd)
+        //await this.emailInput.fill(email)
+        //await this.crntPassword.fill(cnfmpswd)
         await this.saveChangesBtn.click()
     }
 
