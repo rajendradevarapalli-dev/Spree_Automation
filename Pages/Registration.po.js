@@ -30,7 +30,7 @@ export class registrationPage {
        await this.createAccountBtn.click()
       }
 
-      async loginSuccess(){
+      async SigninSuccess(){
         await expect(this.page.locator('//h1[text()="Account Overview"]')).toBeVisible()
       }
 
